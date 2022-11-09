@@ -30,7 +30,7 @@ Huomioitakoon, ettei Sanulimoguli myöskään ota huomioon sanayhdistelmiä aloi
 ## Entropia ja muu *matematiikka :(((((*
 Matematiikassa entropialla voidaan mitata joukon "tasaisuutta", eli toisin sanoen vaihtelun määrää. Sanulissa entropian voi käytännössä ajatella ennusteena information määrästä, jonka arvattu sana antaa. Mitä vähemmän vaihtelua "vihjeiden" (selitetty piakkoin) määrissä, sitä parempi sana on. Hämmentävää.
 **Entropian laskeminen:**
-<img src="https://latex.codecogs.com/gif.latex?\inline&space;\bg{white}E[I]=\sum_{x\in I}^{ }p\left(x\right)\cdot\log_2\left(\frac{1}{p\left(x\right)}\right)\textup{jossa }p(x)\textup{ tarkoittaa \textit{x}:n todenn}\ddot{a}k\ddot{o}\textup{isyytt}\ddot{a}\textup{ ja \textit{I} sis}\ddot{a}\textup{lt}\ddot{a}\ddot{a}\textup{ kaikki \textit{x}:t eli vihjeiden m}\ddot{a}\ddot{a}\textup{r}\ddot{a}\textup{t}">
+<img src="readme-img/entropy.gif">
 <br>
 Kaava voi aluksi tosiaan vaikuttaa hieman hämmentävältä (miten logaritmi liittyy Sanuliin?), mutta se on hyvin toimiva pienen tutkiskelun jälkeen. x:llä tarkoitetaan Sanulin tapauksessa sanan kaikkien mahdollisten "vihjeiden" määriä. Esimerkiksi jos YÖPUU olisi oikea sana, arvauksella MÖMMÖ saisi vihjeen *HARMAA-VIHREÄ-HARMAA-HARMAA-HARMAA* (tästedes 0=harmaa, 1=keltainen ja 2=vihreä). Ohjelma laskee kaikille sanoille kaikki mahdolliset vihjeet ja niiden määrät suhteessa toisiinsa. Esimerkiksi MÖMMÖllä yleisin vihje jonka alussa voi saada, on *0-0-0-0-0*, jonka todennäköisyys on noin 80%. Toiseksi yleisin vihje on *2-0-0-0-0*, jonka todennäköisyys on vain surkeat 6%.
 
@@ -40,13 +40,13 @@ Tässä täytyy vielä huomauttaa, ettei hyvissä arvauksissa *0-0-0-0-0* ole hu
 
 *Mut nipa, mikä hemmetin logaritmi? Ja miks **kahen** kannalla?*
 Logaritmin avulla Sanuliin liittyviä todennäköisyyksiä on paljon luonnollisempi käsitellä. Kun arvauksesta saatu informaatio/entropia nousee yhdellä (huomaa, että kaikilla sanoilla on oma aloitusvakio), jäljellä olevien arvausten määrä puolittuu. Tästä juuri kahden kanta tulee (kymmenen kantaa käyttäessä arvausten määrä jaettaisiin aina kymmenellä *informaation* noustessa yhdellä). Siispä jos jokin vihje leikkaisi kaikki mahdolliset arvaukset 25%:iin, logaritmilla arvo olisi
-<img src="https://latex.codecogs.com/gif.latex?\inline&space;\bg{white}log_2\left(\frac{1}{p\left(x\right)}\right)=log_2\left(\frac{1}{0,25}\right)=log_2(4)=2">
+<img src="readme-img/log.gif">
 sillä mahdollisten ratkaisujen määrä on *puolittunut* kaksi kertaa. Kutsutaan siis tästedes tätä logaritmin kautta laskettua todennäköisyyttä *informaatioksi*.
 
 Mitä suurempi saatu informaatio arvauksella on, sitä parempi, sillä mahdollisten jäljellä olevien sanojen määrä on pienempi. Jokaisella vihjeellä on siis oma informaatiomäärä. Esimerkiksi, jos kävisi niin hyvä tuuri että MÖMMÖä käyttäen vihjeeksi tulisi *0-2-0-0-0*, jäljelle jäisi enää vain 56 mahdollista sanaa. MÖMMÖ olisi siten leikannut mahdollisten sanojen määrän 3327:stä (kaikkien sanojen määrä) 56:een, eli jäljellä olisi enää vain 1,7% alkuperäisistä sanoista. Saatu informaatio täten olisi noin 5,9, joka tarkoittaa että sanojen määrä on puolittunut noin 6 kertaa.
 
 **Entropian laskeminen (uudestaan):**
-<img src="https://latex.codecogs.com/gif.latex?\inline&space;\bg{white}E[I]=\sum_{x\in I}^{ }p\left(x\right)\cdot\log_2\left(\frac{1}{p\left(x\right)}\right)\textup{jossa }p(x)\textup{ tarkoittaa \textit{x}:n todenn}\ddot{a}k\ddot{o}\textup{isyytt}\ddot{a}\textup{ ja \textit{I} sis}\ddot{a}\textup{lt}\ddot{a}\ddot{a}\textup{ kaikki \textit{x}:t eli vihjeiden m}\ddot{a}\ddot{a}\textup{r}\ddot{a}\textup{t}">
+<img src="readme-img/entropy.gif">
 Entropia siis tarkoittaa kaikkien mahdollisten vihjeiden informaation keskiarvoa, eli ennustetta siitä kuinka paljon informaatiota arvauksesta saadaan. Näinpä paras mahdollinen sana on se, jonka entropia on suurin. MÖMMÖn entropia on vain 1,36. Informaatiota ei siis yleensä kery paljoa. Useimmiten vihjeeksi tulee *0-0-0-0-0*, noin 80% kaikista peleistä. Kyseisestä vihjeestä saatu informaatio on hyvin pieni, sillä se karsii vain 659 sanaa 3327:stä. Vihjeestä saatu informaatio on vielä ennustettakin (entropiaa) pienempi, kävi siis huono tuuri. MÖMMÖn entropiaa kuitenkin nostaa kaikki muut mahdolliset vihjeet. Jos vihjeeksi tulisi oikeastaan mikä tahansa muu kuin rivi tyhjää, se jättäisi mahdollisten sanojen määrän enää marginaalisen pieneksi. MÖMMÖ on siis hardcore-avaaja, mutta samalla myös *high-risk, high-reward* -taktiikka. Kaikista parhaimmat sanat ovat niitä, jotka luovat vakaimman jakauman vihjeiden todennäköisyyksien välillä, mikä on juuri sitä mitä entropia laskee.
 [wikipedia-linkki entropiaan](https://en.wikipedia.org/wiki/Entropy_(information_theory))
 
