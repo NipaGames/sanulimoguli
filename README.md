@@ -24,7 +24,7 @@ Kaikki mahdolliset sanat löytyy tiedostosta ``words-parsed.txt`` -tiedostosta. 
 ## Kiitokset
 Koko projekti sai inspiraation 3Blue1Brownin erinomaisesta videosta [Solving Wordle using information theory](https://youtu.be/v68zYyaEmEA). Kannattaakin katsoa se viimeistään ennen sukeltamista teoriaan ja matematiikkaan.
 ## Ongelmat
-Aloitussanat ovat parhaita *teoriassa* ja ne valitaan todennäköisyyksien perusteella. Suuri ero koneen ja ihmisen pelaamiseen on esimerkiksi se, että aloituksessa (ainakin itse) koitan saada mahdollisimman monta vokaalia alussa selvitettyä, koska on helpompi hahmottaa sanoja joissa vokaalit (toisin kuin konsonantit) ovat tietyillä paikoilla. Tietokone ei tarvitse hahmottamista työkalukseen, koska se muistaa aina kaikki mahdolliset sanat.
+Aloitussanat ovat parhaita *teoriassa* ja ne valitaan todennäköisyyksien perusteella. Suuri ero koneen ja ihmisen pelaamisen välillä on esimerkiksi se, että aloituksessa (ainakin itse) koitan saada mahdollisimman monta vokaalia selvitettyä, koska on helpompi hahmottaa sanoja joissa vokaalit (toisin kuin konsonantit) ovat tietyillä paikoilla. Tietokone ei tarvitse hahmottamista työkalukseen, koska se muistaa aina kaikki mahdolliset sanat.
 
 Huomioitakoon, ettei Sanulimoguli myöskään ota huomioon sanayhdistelmiä aloituksessa, kuten omaa vakiotani OMENA-PURSI.
 ## Entropia ja muu *matematiikka :(((((*
