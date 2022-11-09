@@ -20,7 +20,7 @@
 Suurempi arvo nostaa sanan kelpoisuutta.
 ## Käyttö
 Koko ohjelman voi suorittaa komennolla ``py sanuli.py``. Ohjelma aluksi laskee ja tallentaa sanojen kelpoisuudet aloitussanoiksi, jonka jälkeen tekee yhteenvedon parhaimmista ja huonoimmista aloitussanoista. Ohjelmalla voi myös hakea tietyn sanan kelpoisuutta.
-Kaikki mahdolliset sanat löytyy tiedostosta ``words-parsed.txt`` -tiedostosta. Sanat on kaivettu suoraan Sanulin WASM-tiedostosta. Lasketut entropiat jokaiselle sanalle aloituksessa löytyy JSON-muodossa tiedostosta ``entropies.txt``.
+Kaikki mahdolliset sanat löytyy ``words-parsed.txt``-tiedostosta. Sanat on kaivettu suoraan Sanulin WASM-tiedostosta. Lasketut entropiat jokaiselle sanalle aloituksessa löytyy JSON-muodossa tiedostosta ``entropies.txt``.
 ## Kiitokset
 Koko projekti sai inspiraation 3Blue1Brownin erinomaisesta videosta [Solving Wordle using information theory](https://youtu.be/v68zYyaEmEA). Kannattaakin katsoa se viimeistään ennen sukeltamista teoriaan ja matematiikkaan.
 ## Ongelmat
